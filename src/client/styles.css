@@ -37,3 +37,15 @@ main {
     display: flex;
     justify-content: space-around;
 }
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.room {
+    Width: 250px;
+    height: 250px;
+    margin: 100px;
+    background-color: #333;
+}
