@@ -1,0 +1,6 @@
+{
+    "intelephense.environment.phpExecutablePath": "C:\Users\tdas1\Downloads\php-8.3.9-nts-Win32-vs16-x64\php.exe", // Replace with the actual path to your PHP executable
+    "php.validate.executablePath": "C:\Users\tdas1\Downloads\php-8.3.9-nts-Win32-vs16-x64\php.exe", // Replace with the actual path to your PHP executable
+    "php.suggest.basic": false,
+    "intelephense.files.associations": ["*.php", "*.phtml"]
+}
