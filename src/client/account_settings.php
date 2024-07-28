@@ -63,6 +63,7 @@ $conn->close();
             <h2>Account Settings</h2>
             <a href="change_password.html">Change Password</a>
             <a href="payments.html">My Payments</a>
+            <a href="delete_account.php">Delete Account</a>
 
             <h3>My Bookings</h3>
             <?php if (count($bookings) > 0): ?>
