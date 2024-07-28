@@ -60,6 +60,19 @@ if ($conn->query($sql) !== TRUE) {
     die("Error creating table bookings: " . $conn->error);
 }
 
+//create payments table
+$sql = "CREATE TABLE payments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    card_number VARCHAR(20) NOT NULL,
+    expiry_date VARCHAR(5) NOT NULL,
+    cvv VARCHAR(4) NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+)";
+if ($conn->query($sql) !== TRUE) {
+    die("Error creating table bookings: " . $conn->error);
+}
+
 // Close the connection
 $conn->close();
 
