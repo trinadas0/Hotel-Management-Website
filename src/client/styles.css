@@ -25,6 +25,14 @@ header nav a:hover {
     text-decoration: underline;
 }
 
+/* Added banner styles with smaller height */
+.banner img {
+    width: 100%;
+    height: auto;
+    max-height: 200px; /* Adjust this value to make the image height smaller */
+    display: block;
+}
+
 main {
     padding: 20px;
 }
@@ -173,7 +181,6 @@ button {
 .login-form a:hover {
     text-decoration: underline;
 }
-
 
 .signup-form {
     max-width: 300px;
