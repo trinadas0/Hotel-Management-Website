@@ -213,3 +213,46 @@ button {
 .signup-form button:hover {
     background-color: #333; 
 }
+
+/* Account settings styles */
+.account-settings {
+    padding: 20px;
+}
+
+.account-settings h2 {
+    margin-bottom: 20px;
+}
+
+/* Form styles */
+#accountSettingsForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#accountSettingsForm a {
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    text-decoration: none;
+    color: #333;
+    border-radius: 5px;
+}
+
+#accountSettingsForm a:hover {
+    background-color: #e0e0e0;
+}
+
+button[type="submit"] {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #555;
+}
+
