@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <nav>
             <a href="index.php">Home</a>
             <a href="login.php" id="loginBtn">Log In</a>
-            <a href="account_settings.html">Account Settings</a>
+            <a href="account_settings.php">Account Settings</a>
             <a href="contact.php">Contact Us</a>
         </nav>
     </header>
