@@ -11,8 +11,8 @@
         <div class="logo">18Hotels</div>
         <nav>
             <a href="index.html">Home</a>
-            <a href="#">Rooms</a>
-            <a href="login.html">Log In</a>
+            <a href="login.html" id="loginBtn">Log In</a>
+            <a href="account_settings.html">Account Settings</a>
             <a href="contact.php">Contact Us</a>
         </nav>
     </header>
