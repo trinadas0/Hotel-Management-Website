@@ -10,8 +10,8 @@
     <header>
         <div class="logo">18Hotels</div>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="login.html" id="loginBtn">Log In</a>
+            <a href="index.php">Home</a>
+            <a href="login.php" id="loginBtn">Log In</a>
             <a href="account_settings.html">Account Settings</a>
             <a href="contact.php">Contact Us</a>
         </nav>

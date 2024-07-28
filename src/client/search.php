@@ -1,6 +1,18 @@
 <?php
-// Include the database setup file
-include 'setup.php';
+session_start();
+
+$servername = "localhost";
+$username = "root";  
+$password = "";      
+$dbname = "hotelbookingmanagement";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
 // Retrieve query parameters
 $arrival = $_GET['arrival'];
@@ -32,8 +44,15 @@ foreach ($results as $room) {
             <h3>Room {$room['room_number']}</h3>
             <p>Beds: {$room['beds']}</p>
             <p>Amenities: {$room['amenities']}</p>
-            <p>Price: \${$room['price']} per night</p>
-            <button class='book-btn' data-room-id='{$room['id']}'>Book</button>
-          </div>";
+            <p>Price: \${$room['price']} per night</p>";
+    if (isset($_SESSION['user_id'])) {
+        echo "<button class='book-btn' data-room-id='{$room['id']}'>Book</button>";
+    } else {
+        echo "<p>Please <a href='login.php'>log in</a> to book this room.</p>";
+    }
+    echo "</div>";
 }
+
+$stmt->close();
+$conn->close();
 ?>

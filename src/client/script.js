@@ -83,3 +83,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
     searchForm.addEventListener("submit", handleSearch);
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const bookButtons = document.querySelectorAll('.book-btn');
+
+    bookButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const roomId = this.getAttribute('data-room-id');
+            const arrival = document.getElementById('arrival').value;
+            const departure = document.getElementById('departure').value;
+
+            fetch('book.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    room_id: roomId,
+                    arrival: arrival,
+                    departure: departure
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Booking successful!');
+                } else {
+                    alert('Booking failed: ' + data.message);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    });
+});
