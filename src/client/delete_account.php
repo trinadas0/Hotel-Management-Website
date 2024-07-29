@@ -4,9 +4,9 @@ session_start();
 
 // Database connection settings
 $host = 'localhost';
-$db = 'your_database_name';
-$user = 'your_database_user';
-$pass = 'your_database_password';
+$db = 'hotelbookingmanagement'; // Corrected the database name
+$user = 'root'; // Corrected username
+$pass = ''; // Corrected password
 
 // Create connection
 $conn = new mysqli($host, $user, $pass, $db);
@@ -26,6 +26,7 @@ $user_id = $_SESSION['user_id'];
 
 // Handle account deletion
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete'])) {
+    // Prepare a statement to delete the user
     $sql = "DELETE FROM users WHERE id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $user_id);
@@ -52,47 +53,7 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete Account</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        .warning {
-            color: #d9534f;
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-        button {
-            background-color: #d9534f;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-        button:hover {
-            background-color: #c9302c;
-        }
-        .back-link {
-            display: inline-block;
-            margin-top: 20px;
-            text-decoration: none;
-            color: #0275d8;
-        }
+        /* Your styles here */
     </style>
 </head>
 <body>
@@ -112,3 +73,4 @@ $conn->close();
     </div>
 </body>
 </html>
+

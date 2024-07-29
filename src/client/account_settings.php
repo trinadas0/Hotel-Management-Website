@@ -45,8 +45,8 @@ $conn->close();
 <body>
     <header>
         <div class="logo">18Hotels</div>
-        <nav>
-            <a href="index.php">Home</a>
+        
+            <a href="index.php">Home</a> 
             <?php if (isset($_SESSION['user_id'])): ?>
                 <a href="account_settings.php">Account Settings</a>
                 <a href="logout.php">Log Out</a>

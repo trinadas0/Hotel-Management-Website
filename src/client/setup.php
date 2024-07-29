@@ -53,26 +53,25 @@ $sql = "CREATE TABLE IF NOT EXISTS bookings (
     room_id INT NOT NULL,
     arrival DATE NOT NULL,
     departure DATE NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (room_id) REFERENCES rooms(id)
 )";
 if ($conn->query($sql) !== TRUE) {
     die("Error creating table bookings: " . $conn->error);
 }
 
-//create payments table
-$sql = "CREATE TABLE payments (
+// Create payments table
+$sql = "CREATE TABLE IF NOT EXISTS payments (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
     card_number VARCHAR(20) NOT NULL,
     expiry_date VARCHAR(5) NOT NULL,
     cvv VARCHAR(4) NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 )";
 if ($conn->query($sql) !== TRUE) {
-    die("Error creating table bookings: " . $conn->error);
+    die("Error creating table payments: " . $conn->error);
 }
-
 // Close the connection
 $conn->close();
 
