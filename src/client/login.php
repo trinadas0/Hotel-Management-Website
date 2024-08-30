@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root";  // Update with your database username
-$password = "";      // Update with your database password
+$username = "root";  // Update with our database username
+$password = "";      // Update with our database password
 $dbname = "hotelbookingmanagement";
 
 // Create connection
